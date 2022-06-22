@@ -28,7 +28,11 @@ const Navbar = () => {
               position: "relative",
             }}
           >
-            <img src={cartImage} alt="" style={{ width: "3rem", height: "3rem", cursor: "pointer", border: ".8px solid black", borderRadius: "50%", padding: "10px" }} />
+            <img
+              src={cartImage}
+              alt=""
+              style={{ width: "3rem", height: "3rem", cursor: "pointer", border: ".8px solid black", borderRadius: "50%", padding: "10px" }}
+            />
             <div
               style={{
                 position: "absolute",
