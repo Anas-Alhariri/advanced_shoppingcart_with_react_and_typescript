@@ -1,10 +1,13 @@
-import React from "react";
-import { Button, Container, Nav, Navbar as NavbarBS } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import React from "react"
+import { Button, Container, Nav, Navbar as NavbarBS } from "react-bootstrap"
+import { NavLink } from "react-router-dom"
 
-import cartImage from "../imgs/shopping-cart-10925.svg";
+import cartImage from "../imgs/shopping-cart-10925.svg"
+import { useShoppingCart } from "../context/ShoppingCartContext"
 
 const Navbar = () => {
+  const { getItemQuantity } = useShoppingCart()
+
   return (
     <>
       <NavbarBS sticky="top" className="bg-white shadow-sm mb-3">
@@ -25,18 +28,7 @@ const Navbar = () => {
               position: "relative",
             }}
           >
-            <img
-              src={cartImage}
-              alt=""
-              style={{
-                width: "3rem",
-                height: "3rem",
-                cursor: "pointer",
-                border: ".8px solid black",
-                borderRadius: "50%",
-                padding: "10px",
-              }}
-            />
+            <img src={cartImage} alt="" style={{ width: "3rem", height: "3rem", cursor: "pointer", border: ".8px solid black", borderRadius: "50%", padding: "10px" }} />
             <div
               style={{
                 position: "absolute",
@@ -54,13 +46,13 @@ const Navbar = () => {
                 fontSize: ".85rem",
               }}
             >
-              3
+              {getItemQuantity(1)}
             </div>
           </div>
         </Container>
       </NavbarBS>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
