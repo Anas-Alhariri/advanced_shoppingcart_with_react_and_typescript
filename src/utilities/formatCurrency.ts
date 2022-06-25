@@ -1,8 +1,5 @@
-const CURRENCY_FORMATTER = new Intl.NumberFormat(
-  undefined,
-  { currency: "CAD", style: "currency" }
-)
+const CURRENCY_FORMATTER = new Intl.NumberFormat(undefined, { currency: "CAD", style: "currency" })
 
-export function formatCurrency(number: number) {
+export function formatCurrency(number: number): string {
   return CURRENCY_FORMATTER.format(number)
 }

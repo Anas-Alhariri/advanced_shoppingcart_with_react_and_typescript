@@ -6,7 +6,7 @@ import cartImage from "../imgs/shopping-cart-10925.svg"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 
 const Navbar = () => {
-  const { getItemQuantity } = useShoppingCart()
+  const { openCart, cartQuantity } = useShoppingCart()
 
   return (
     <>
@@ -24,6 +24,7 @@ const Navbar = () => {
             </Nav.Link>
           </Nav>
           <div
+            onClick={openCart}
             style={{
               position: "relative",
             }}
@@ -33,25 +34,28 @@ const Navbar = () => {
               alt=""
               style={{ width: "3rem", height: "3rem", cursor: "pointer", border: ".8px solid black", borderRadius: "50%", padding: "10px" }}
             />
-            <div
-              style={{
-                position: "absolute",
-                bottom: "0",
-                right: "0",
-                width: "1.5rem",
-                height: "1.5rem",
-                transform: "translate(25%,25%)",
-                backgroundColor: "lightgreen",
-                borderRadius: "50%",
-                color: "red",
-                display: "flex",
-                placeContent: "center",
-                placeItems: "center",
-                fontSize: ".85rem",
-              }}
-            >
-              {getItemQuantity(1)}
-            </div>
+            {cartQuantity > 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "0",
+                  right: "0",
+                  width: "1.5rem",
+                  height: "1.5rem",
+                  transform: "translate(25%,25%)",
+                  backgroundColor: "black",
+                  color: "white",
+                  border: "white 1px solid",
+                  borderRadius: "50%",
+                  display: "flex",
+                  placeContent: "center",
+                  placeItems: "center",
+                  fontSize: ".85rem",
+                }}
+              >
+                {cartQuantity}
+              </div>
+            )}
           </div>
         </Container>
       </NavbarBS>
