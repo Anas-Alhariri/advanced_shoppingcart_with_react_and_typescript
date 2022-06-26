@@ -1,3 +1,3 @@
 # Check the Demo here
 
-[Feature's Demo Link](https://shoppingcart-reactjs.surge.sh/store)
+[Feature's Demo Link](https://shoppingcart-reactjs.surge.sh)
